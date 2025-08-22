@@ -1,4 +1,4 @@
-## Battle-test for scientific local-reasoning [llama.cpp]
+## Battle-test LLM models for scientific local-reasoning [llama.cpp]
 
 To install llama.cpp locally:
 
