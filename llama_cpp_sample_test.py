@@ -8,28 +8,61 @@ QUERY = [
     {"role": "user", "content": user_query},
 ]
 
-response = llm.create_chat_completion(
-    messages=QUERY,
-    max_tokens=4096*2,
-    repeat_penalty=1.2,
-    stream=True,
-    temperature=0.2,
-    top_p=0.95,
-    top_k=40,
-    min_p=0.05,      
-    frequency_penalty=0.0,
-    presence_penalty=0.0,
-    stop=["<|im_end|>", "</thinking>", "<|endofthinking|>", "\n\nHuman:", "\n\nAssistant:"]
-)
+try:
+    response = llm.create_chat_completion(
+        messages=QUERY,
+        max_tokens=4096*2,
+        repeat_penalty=1.2,
+        stream=True,
+        temperature=0.2,
+        top_p=0.95,
+        top_k=40,
+        min_p=0.05,      
+        frequency_penalty=0.0,
+        presence_penalty=0.0,
+        stop=["<|im_end|>", "</thinking>", "<|endofthinking|>", "\n\nHuman:", "\n\nAssistant:"]
+    )
 
-for chunk in response:
-    if "choices" in chunk and len(chunk["choices"]) > 0:
-        delta = chunk["choices"][0].get("delta", {})
-        if "content" in delta:
-            print(delta["content"], end="", flush=True)
+    # Add timeout and explicit completion checking
+    for chunk in response:
+        try:
+            if "choices" in chunk and len(chunk["choices"]) > 0:
+                choice = chunk["choices"][0]
+                delta = choice.get("delta", {})
+                
+                # Check for completion
+                if choice.get("finish_reason") is not None:
+                    print(f"\nStream finished: {choice['finish_reason']}")
+                    break
+                    
+                if "content" in delta:
+                    print(delta["content"], end="", flush=True)
+                    
+        except Exception as chunk_error:
+            print(f"\nError processing chunk: {chunk_error}")
+            break
 
-print()
+except Exception as e:
+    print(f"\nError during completion: {e}")
 
-# Cleanup
-del llm
-gc.collect()
+finally:
+    print("\n")
+    
+    # Cleanup and memory management
+    try:
+        if 'response' in locals():
+            # Close the stream if it has a close method
+            if hasattr(response, 'close'):
+                response.close()
+        
+        if 'llm' in locals():
+            del llm
+            
+        collected = gc.collect(generation=2)
+        print(f"Garbage collector: collected {collected} objects.")
+        
+    except Exception as cleanup_error:
+        print(f"Cleanup error: {cleanup_error}")
+    
+    finally:
+        gc.disable()
