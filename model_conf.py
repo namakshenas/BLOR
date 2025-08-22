@@ -5,5 +5,10 @@ llm = Llama(
     n_gpu_layers=-1, # Use all GPU (Metal acceleration)
     n_ctx=65536,
     n_batch=512,
-    verbose=False
+    verbose=False,
+    use_mmap=True,        # Memory-mapped files for efficiency
+    use_mlock=False,      # Set True if you have enough RAM
+    logits_all=False,     # Don't need all logits for chat
+    f16_kv=True,
+    n_threads=8,
 )

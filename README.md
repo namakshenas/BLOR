@@ -1,4 +1,4 @@
-## Battle-test LLM models for scientific local-reasoning [llama.cpp]
+## Battle-testing LLM models on scientific local-reasoning [llama.cpp]
 
 To install llama.cpp locally:
 
@@ -6,7 +6,7 @@ To install llama.cpp locally:
 pip install llama-cpp-python
 ```
 
-To install llama.cpp in apple silicon, use:
+To install llama.cpp in apple silicon:
 
 ```python
 pip install 'llama-cpp-python[metal]'

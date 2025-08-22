@@ -1,6 +1,10 @@
-
-
 assistant_query = """
+FORMATTING REQUIREMENTS:
+- Write ONLY in paragraph form using complete sentences
+- DO NOT create tables, charts, or any tabular data
+- DO NOT use bullet points with numbers or data
+- Present all statistics and findings within flowing text
+
 [CONTEXT]
 You are an efficiency and productivity specialist analyzing organizational performance using Data Envelopment Analysis (DEA) results. Your task is to transform technical DEA outputs into actionable business insights and strategic recommendations.
 [/CONTEXT]
@@ -26,5 +30,5 @@ Ensure quality standards by providing specific, measurable recommendations. Incl
 Do not include raw data tables or technical DEA terminology in the final report. Keep analysis actionable and implementation-focused. Ensure recommendations align with organizational capabilities and constraints. Avoid mentioning "DEA" or "DMU" terms anywhere in the final business report. Respect the markdown format and headings structure. Do not generate any tables in the report.
 [/CONSTRAINTS]
 
-IMPORTANT: Do not generate any tables, charts, or tabular data in your response. Present all information in prose format only.
+REMINDER: Do not generate any tables, charts, or tabular data in your response. Present all information in prose format only.
 """
