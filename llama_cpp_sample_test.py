@@ -1,7 +1,7 @@
 from model_conf import llm
 import gc
-from queries.sample_1.assistant import assistant_query
-from queries.sample_1.user import user_query
+from queries.bench_1.assistant import assistant_query
+from queries.bench_1.user import user_query
 
 QUERY = [
     {"role": "system", "content": assistant_query},
@@ -11,7 +11,7 @@ QUERY = [
 try:
     response = llm.create_chat_completion(
         messages=QUERY,
-        max_tokens=4096*2,
+        max_tokens=1024*32,
         repeat_penalty=1.2,
         stream=True,
         temperature=0.2,
@@ -29,11 +29,6 @@ try:
             if "choices" in chunk and len(chunk["choices"]) > 0:
                 choice = chunk["choices"][0]
                 delta = choice.get("delta", {})
-                
-                # Check for completion
-                if choice.get("finish_reason") is not None:
-                    print(f"\nStream finished: {choice['finish_reason']}")
-                    break
                     
                 if "content" in delta:
                     print(delta["content"], end="", flush=True)
