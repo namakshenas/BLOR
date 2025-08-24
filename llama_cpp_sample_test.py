@@ -1,7 +1,7 @@
 from model_conf import llm
 import gc
-from queries.bench_3.assistant import assistant_query
-from queries.bench_3.user import user_query
+from benchmarks.b03.assistant import assistant_query
+from benchmarks.b03.user import user_query
 
 QUERY = [
     {"role": "system", "content": assistant_query},
