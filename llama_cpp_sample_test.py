@@ -1,7 +1,7 @@
 from model_conf import llm
 import gc
-from benchmarks.b03.assistant import assistant_query
-from benchmarks.b03.user import user_query
+from benchmarks.b01.assistant import assistant_query
+from benchmarks.b01.user import user_query
 
 QUERY = [
     {"role": "assistant", "content": assistant_query},
@@ -11,7 +11,7 @@ QUERY = [
 try:
     response = llm.create_chat_completion(
         messages=QUERY,
-        max_tokens=1024*32,
+        max_tokens=1024*16,
         repeat_penalty=1.2,
         stream=True,
         temperature=0.2,
