@@ -4,7 +4,7 @@ from benchmarks.b03.assistant import assistant_query
 from benchmarks.b03.user import user_query
 
 QUERY = [
-    {"role": "system", "content": assistant_query},
+    {"role": "assistant", "content": assistant_query},
     {"role": "user", "content": user_query},
 ]
 
