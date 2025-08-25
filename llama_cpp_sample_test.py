@@ -17,7 +17,7 @@ try:
         temperature=0.2,
         top_p=0.95,
         top_k=40,
-        min_p=0.05,      
+        min_p=0.05,  
         frequency_penalty=0.0,
         presence_penalty=0.0,
         stop=["<|im_end|>", "</thinking>", "<|endofthinking|>", "\n\nHuman:", "\n\nAssistant:"]
