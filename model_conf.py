@@ -7,13 +7,13 @@ llm = Llama(
     n_gpu_layers=-1, # -1 for Use all GPU (Metal acceleration)
     # n_ctx=131072,
     # n_ctx=65536,
-    n_ctx=32768,
+    n_ctx=1024*32,
     n_batch=512,
     verbose=False,
     use_mmap=True,        # Memory-mapped files for efficiency
     use_mlock=False,      # Set True if you have enough RAM
     logits_all=False,     # Don't need all logits for chat
     f16_kv=True,
-    n_threads=8,
+    n_threads=12,
     # chat_format="chatml",  # or try "phi-3", "openchat", or "auto" --- corresponds to the --jinja functionality in the CLI version
 )

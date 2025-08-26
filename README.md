@@ -17,3 +17,17 @@ Download your desired model from `huggingface` with `.gguf` format and add it to
 ```bash
 wget https://huggingface.co/unsloth/Qwen3-4B-Thinking-2507-GGUF/resolve/main/Qwen3-4B-Thinking-2507-Q4_K_M.gguf
 ```
+
+To test with fastapi:
+```bash
+pip install fastapi[standard]
+```
+
+then:
+```bash
+fastapi dev llama_cpp_fastapi.py
+```
+
+```bash
+curl -N http://127.0.0.1:8000/streamllm
+```

@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from model_conf import llm
 import gc
-from benchmarks.b03.assistant import assistant_query
-from benchmarks.b03.user import user_query
+from benchmarks.b04.assistant import assistant_query
+from benchmarks.b04.user import user_query
 
 print(f"LLM imported: {llm}")  # Debug line
 
