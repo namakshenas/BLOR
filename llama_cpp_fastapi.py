@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-from model_conf import llm
+from configs.config_arm64 import llm
 import gc
 from benchmarks.b04.assistant import assistant_query
 from benchmarks.b04.user import user_query

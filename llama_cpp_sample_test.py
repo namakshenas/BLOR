@@ -1,4 +1,4 @@
-from model_conf import llm
+from configs.config_arm64 import llm
 import gc
 from benchmarks.b01.assistant import assistant_query
 from benchmarks.b01.user import user_query
