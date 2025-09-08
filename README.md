@@ -1,8 +1,10 @@
-# Battle-testing LLM models on scientific local-reasoning [llama.cpp]
+# Battle-testing local LLM models on complex reasoning
+
+## Why llama.cpp?
+
+The purpose of this repo is to test different LLM models on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
 
 ## Installation
-
-### Standard Installation
 
 For most systems, install the Python bindings for llama.cpp:
 
@@ -10,39 +12,26 @@ For most systems, install the Python bindings for llama.cpp:
 pip install llama-cpp-python
 ```
 
-### Apple Silicon Installation
-
-If you're using a Mac with Apple Silicon (M1/M2/M3 chips), install with Metal support for GPU acceleration:
+If you're using a Mac with `Apple Silicon` (M1/... chips), install with Metal support for GPU acceleration:
 
 ```bash
 pip install 'llama-cpp-python[metal]'
 ```
 
-> **Note:** The Metal backend provides significant performance improvements on Apple Silicon by utilizing the GPU.
-
 ## Model Setup
 
 ### Download a Model
 
-Models for llama.cpp use the `.gguf` format. You can download them from Hugging Face. First, create a models directory:
-
-```bash
-mkdir models
-cd models
-```
-
-Then download your desired model. For example, to download the Qwen3-4B model:
+Models for llama.cpp uses the `.gguf` format. You can download them from Hugging Face. For example, to download the Qwen3-4B model:
 
 ```bash
 wget https://huggingface.co/unsloth/Qwen3-4B-Thinking-2507-GGUF/resolve/main/Qwen3-4B-Thinking-2507-Q4_K_M.gguf
 ```
 
-> **Model Notes:**
-> - `.gguf` files are quantized models that balance performance and quality
-> - `Q4_K_M` indicates 4-bit quantization with medium quality
+> **Note:**
 > - Smaller quantized models use less RAM but may have slightly reduced quality
 
-## Testing with FastAPI
+## Testing with FastAPI [experimental]
 
 ### Install FastAPI
 
