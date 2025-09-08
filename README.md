@@ -1,5 +1,8 @@
 # Battle-testing local LLM models on complex reasoning
 
+⚠️ WARNING: Early-stage experimental project (not a tutorial or production-ready). Expect instability, API changes, and minimal error handling.
+
+
 ## Why llama.cpp?
 
 The purpose of this repo is to test different LLM models on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
