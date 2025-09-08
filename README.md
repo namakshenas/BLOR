@@ -1,11 +1,10 @@
 # Battle-testing local LLM models on complex reasoning
 
-⚠️ WARNING: Early-stage experimental project (not a tutorial or production-ready). Expect instability, API changes, and minimal error handling.
-
+⚠️ WARNING. Early-stage experimental project (not a tutorial or production-ready). Expect instability, API changes, and minimal error handling.
 
 ## Why llama.cpp?
 
-The purpose of this repo is to test different LLM models on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
+TL;DR: The purpose of this repo is to test different LLM models on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
 
 ## Installation
 
@@ -32,7 +31,7 @@ wget https://huggingface.co/unsloth/Qwen3-4B-Thinking-2507-GGUF/resolve/main/Qwe
 ```
 
 > **Note:**
-> - Smaller quantized models use less RAM but may have slightly reduced quality
+> Smaller quantized models use less RAM but may have slightly reduced quality
 
 ## Testing with FastAPI [experimental]
 
