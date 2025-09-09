@@ -4,7 +4,7 @@
 
 ## Why llama.cpp?
 
-TL;DR: The purpose of this repo is to test different LLM models on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
+TL;DR: The purpose of this repo is to test different LLM models against complex reasoning on devices with limited resources or privacy-focused environments or CPU-only inference, mostly without any access to GPUs. `llama.cpp` has been optimized for efficient inference of quantized models, particularly on CPUs and edge devices.
 
 ## Installation
 
