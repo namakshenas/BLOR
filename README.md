@@ -20,8 +20,6 @@ If you're using a Mac with `Apple Silicon` (M1/... chips), install with Metal su
 pip install 'llama-cpp-python[metal]'
 ```
 
-## Model Setup
-
 ### Download a Model
 
 Models for llama.cpp uses the `.gguf` format. You can download them from Hugging Face. For example, to download the Qwen3-4B model:
