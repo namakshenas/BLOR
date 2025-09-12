@@ -1,7 +1,7 @@
 from configs.config_arm64 import llm
 import gc
-from benchmarks.b01.assistant import assistant_query
-from benchmarks.b01.user import user_query
+from benchmarks.b02.assistant import assistant_query
+from benchmarks.b02.user import user_query
 
 QUERY = [
     {"role": "assistant", "content": assistant_query},
@@ -11,16 +11,15 @@ QUERY = [
 try:
     response = llm.create_chat_completion(
         messages=QUERY,
-        max_tokens=1024*16,
-        repeat_penalty=1.2,
+        max_tokens=1024*32,
+        # repeat_penalty=1.2,
         stream=True,
-        temperature=0.2,
-        top_p=0.95,
-        top_k=40,
-        min_p=0.05,  
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=["<|im_end|>", "</thinking>", "<|endofthinking|>", "\n\nHuman:", "\n\nAssistant:"]
+        # temperature=0.2,
+        # top_p=0.95,
+        # top_k=40,
+        # min_p=0.05,  
+        # frequency_penalty=0.0,
+        # presence_penalty=0.0,
     )
 
     # Add timeout and explicit completion checking
