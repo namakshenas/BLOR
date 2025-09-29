@@ -1,7 +1,7 @@
 from configs.config_arm64 import llm
 import gc
-from benchmarks.b02.assistant import assistant_query
-from benchmarks.b02.user import user_query
+from benchmarks.b05.assistant import assistant_query
+from benchmarks.b05.user import user_query
 
 QUERY = [
     {"role": "assistant", "content": assistant_query},
