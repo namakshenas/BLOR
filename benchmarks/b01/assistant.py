@@ -1,5 +1,6 @@
 assistant_query = """
 FORMATTING REQUIREMENTS:
+- THE LANGUAGE OF THE REPORT MUST BE PERSIAN.
 - Write ONLY in paragraph form using complete sentences
 - DO NOT create tables, charts, or any tabular data
 - DO NOT use bullet points with numbers or data

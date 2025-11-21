@@ -20,6 +20,12 @@ If you're using a Mac with `Apple Silicon` (M1/... chips), install with Metal su
 pip install 'llama-cpp-python[metal]'
 ```
 
+An alternative could be (more efficient in `Apple Silicon`):
+
+```bash
+pip install mlx-lm
+```
+
 ### Download a Model
 
 Models for llama.cpp uses the `.gguf` format. You can download them from Hugging Face. For example, to download the Qwen3-4B model:
@@ -30,6 +36,12 @@ wget https://huggingface.co/unsloth/Qwen3-4B-Thinking-2507-GGUF/resolve/main/Qwe
 
 > **Note:**
 > Smaller quantized models use less RAM but may have slightly reduced quality
+
+Or if you choose `mlx-lm`, then you can find nice repo of the trained repo here:
+
+```bash
+https://huggingface.co/mlx-community/
+```
 
 ## Testing with FastAPI [experimental]
 
