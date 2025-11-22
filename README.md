@@ -43,6 +43,13 @@ Or if you choose `mlx-lm`, then you can find nice repo of the trained repo here:
 https://huggingface.co/mlx-community/
 ```
 
+Example (macbook m2 max 32-gb-ram):
+
+| Model Version | RAM Required | Status on 32GB Mac |
+| :--- | :--- | :--- |
+| **BF16** | **~61 GB** | ❌ **Impossible.** Your Mac will likely crash or freeze immediately. |
+| **4-bit** | **~16 GB** | ✅ **Perfect.** Fits comfortably with room for the OS and long context. |
+
 ## Testing with FastAPI [experimental]
 
 ### Install FastAPI

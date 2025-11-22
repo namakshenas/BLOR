@@ -1,6 +1,6 @@
 from mlx_lm import load, generate, sample_utils
-from benchmarks.b04.assistant import assistant_query
-from benchmarks.b04.user import user_query
+from benchmarks.b05.assistant import assistant_query
+from benchmarks.b05.user import user_query
 
 QUERY = [
     {"role": "assistant", "content": assistant_query},
@@ -9,8 +9,7 @@ QUERY = [
 
 # model, tokenizer = load("mlx-community/VibeThinker-1.5B-mlx-4bit")
 # model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Instruct-2507-4bit")
-# model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Thinking-2507-4bit")
-model, tokenizer = load("mlx-community/Qwen3-Next-80B-A3B-Thinking-8bit")
+model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Thinking-2507-4bit")
 
 prompt = tokenizer.apply_chat_template(
     QUERY, add_generation_prompt=True
@@ -21,8 +20,8 @@ text = generate(
     tokenizer, 
     prompt=prompt, 
     verbose=True,
-    max_tokens=16*1024,
-    sampler = sample_utils.make_sampler(temp=0.4, top_p=0.95),
+    max_tokens=32*1024,
+    sampler = sample_utils.make_sampler(temp=0.2, top_p=0.95),
     logits_processors = sample_utils.make_logits_processors(
         repetition_penalty=1.1
     )

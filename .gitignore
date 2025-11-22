@@ -300,3 +300,7 @@ Project.toml
 
 #pdf reports
 *.pdf
+
+# just ocr examples
+mlx_vl_test.py
+test_per.jpeg
