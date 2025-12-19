@@ -1,6 +1,6 @@
 from mlx_lm import load, generate, sample_utils
-from benchmarks.b05.assistant import assistant_query
-from benchmarks.b05.user import user_query
+from benchmarks.b04.assistant import assistant_query
+from benchmarks.b04.user import user_query
 
 QUERY = [
     {"role": "assistant", "content": assistant_query},
@@ -9,10 +9,11 @@ QUERY = [
 
 # model, tokenizer = load("mlx-community/VibeThinker-1.5B-mlx-4bit")
 # model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Instruct-2507-4bit")
-model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Thinking-2507-4bit")
+# model, tokenizer = load("mlx-community/Qwen3-30B-A3B-Thinking-2507-4bit")
+model, tokenizer = load("mlx-community/NVIDIA-Nemotron-3-Nano-30B-A3B-MLX-MXFP4")
 
 prompt = tokenizer.apply_chat_template(
-    QUERY, add_generation_prompt=True
+    QUERY, add_generation_prompt=True, return_dict=False,
 )
 
 text = generate(
@@ -25,6 +26,7 @@ text = generate(
     logits_processors = sample_utils.make_logits_processors(
         repetition_penalty=1.1
     )
+    
 )
 
 # model saved here: # Check the cache directory
